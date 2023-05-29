@@ -27,7 +27,10 @@ function App() {
     })
     .then(res => res.json())
     .then(data => {
-      console.log('inside post response',data)
+      console.log('inside post response',data);
+      const newUsers = [...users, data];
+      setUsers(newUsers);
+      form.reset();
     })
   }
   return ( 
